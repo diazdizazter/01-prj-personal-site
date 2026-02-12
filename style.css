@@ -1,1 +1,283 @@
-/* Add you CSS here */
+/* Simple color palette and fonts */
+:root {
+	--cream: #fff6e9;
+	--ink: #1f2a44;
+	--coral: #f26b4f;
+	--gold: #f2c14e;
+	--sky: #9ad2de;
+	--white: #ffffff;
+}
+
+/* Basic page setup */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	color: var(--ink);
+	background: linear-gradient(160deg, var(--cream), #ffe3c5 60%, #ffd0b8);
+	min-height: 100vh;
+}
+
+/* Decorative background shapes */
+body::before,
+body::after {
+	content: "";
+	position: fixed;
+	width: 220px;
+	height: 220px;
+	border-radius: 50%;
+	z-index: 0;
+	opacity: 0.25;
+}
+
+body::before {
+	background: var(--sky);
+	top: -40px;
+	left: -40px;
+}
+
+body::after {
+	background: var(--gold);
+	bottom: -60px;
+	right: -30px;
+}
+
+/* Page wrapper keeps content readable */
+.page {
+	position: relative;
+	z-index: 1;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 28px 20px 60px;
+}
+
+/* Header and nav */
+.site-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+	margin-bottom: 50px;
+}
+
+.logo {
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	font-size: 28px;
+	text-decoration: none;
+	color: var(--ink);
+}
+
+.dot {
+	color: var(--coral);
+}
+
+.nav a {
+	text-decoration: none;
+	color: var(--ink);
+	font-weight: 600;
+	margin-left: 16px;
+}
+
+.nav a:hover {
+	color: var(--coral);
+}
+
+/* Hero layout */
+.hero {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+	align-items: center;
+	margin-bottom: 70px;
+}
+
+.hero-text {
+	flex: 1 1 320px;
+}
+
+.eyebrow {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	margin: 0 0 10px;
+}
+
+h1 {
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	font-size: 44px;
+	margin: 0 0 16px;
+}
+
+.lead {
+	font-size: 18px;
+	line-height: 1.6;
+	margin: 0 0 20px;
+}
+
+.hero-actions {
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+/* Button styles */
+.button {
+	display: inline-block;
+	padding: 12px 20px;
+	background: var(--coral);
+	color: var(--white);
+	text-decoration: none;
+	border-radius: 999px;
+	font-weight: 600;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 18px rgba(31, 42, 68, 0.2);
+}
+
+.button.ghost {
+	background: transparent;
+	color: var(--ink);
+	border: 2px solid var(--ink);
+}
+
+/* Hero card */
+.hero-card {
+	flex: 0 1 260px;
+	background: var(--white);
+	border-radius: 20px;
+	padding: 24px;
+	box-shadow: 0 12px 24px rgba(31, 42, 68, 0.15);
+	animation: float 5s ease-in-out infinite;
+}
+
+.card-title {
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 2px;
+	margin: 0 0 8px;
+}
+
+.card-big {
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	font-size: 28px;
+	margin: 0 0 6px;
+}
+
+.card-small {
+	margin: 0;
+	color: #4b5975;
+}
+
+@keyframes float {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+/* Section layout */
+.section {
+	margin-bottom: 60px;
+}
+
+h2 {
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	font-size: 32px;
+	margin-bottom: 16px;
+}
+
+.about-highlights {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	margin-top: 20px;
+}
+
+.highlight {
+	flex: 1 1 240px;
+	background: var(--white);
+	border-radius: 16px;
+	padding: 18px;
+	box-shadow: 0 8px 16px rgba(31, 42, 68, 0.08);
+}
+
+.project-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 18px;
+}
+
+.project {
+	flex: 1 1 260px;
+	background: var(--white);
+	padding: 18px;
+	border-radius: 16px;
+	border: 2px solid #f7d9c4;
+}
+
+.tag {
+	display: inline-block;
+	margin-top: 8px;
+	margin-right: 6px;
+	padding: 4px 10px;
+	background: #ffe8da;
+	border-radius: 999px;
+	font-size: 12px;
+}
+
+.skills {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.skill {
+	background: var(--white);
+	border-radius: 999px;
+	padding: 10px 16px;
+	border: 2px solid #f0c9b2;
+	font-weight: 600;
+}
+
+/* Contact section */
+.contact {
+	text-align: center;
+	background: var(--white);
+	padding: 30px 20px;
+	border-radius: 20px;
+	box-shadow: 0 10px 20px rgba(31, 42, 68, 0.12);
+}
+
+.site-footer {
+	text-align: center;
+	font-size: 14px;
+	color: #4b5975;
+}
+
+/* Responsive tweaks */
+@media (max-width: 720px) {
+	.site-header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.nav a {
+		margin-left: 0;
+		margin-right: 12px;
+	}
+
+	h1 {
+		font-size: 36px;
+	}
+}
